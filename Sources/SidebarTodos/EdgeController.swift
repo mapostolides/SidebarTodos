@@ -191,10 +191,10 @@ final class EdgeController {
     // MARK: Layout
 
     func layout() {
+        // The tab spans exactly the drawer's vertical extent.
         let vf = screen.visibleFrame
-        let tabHeight = max(140, (vf.height / 3).rounded())
-        tab.setFrame(NSRect(x: vf.minX, y: (vf.midY - tabHeight / 2).rounded(),
-                            width: Self.tabWidth, height: tabHeight), display: true)
+        let d = drawerFrame()
+        tab.setFrame(NSRect(x: vf.minX, y: d.minY, width: Self.tabWidth, height: d.height), display: true)
         if isOpen { drawer.setFrame(drawerFrame(), display: true) }
     }
 
