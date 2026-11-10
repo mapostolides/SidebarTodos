@@ -4,4 +4,4 @@
   manage multiple lists, Done section, launch at login, local JSON storage.
 - Drawer opens when the cursor comes within ~48 pt of the tab (proximity zone),
   not only when it touches it.
-- Adjustable TODO text size (10-24 pt).
+- Adjustable TODO text size (10-24 pt): type a number in Settings, or pick a size from the drawer header menu.

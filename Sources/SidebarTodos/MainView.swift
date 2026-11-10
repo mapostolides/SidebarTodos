@@ -236,15 +236,14 @@ struct SettingsView: View {
                     ForEach(screens, id: \.id) { s in Text(s.name).tag(s.id) }
                 }
                 LabeledContent("TODO text size") {
-                    HStack(spacing: 8) {
-                        Text("A").font(.system(size: 10))
-                        Slider(value: $settings.fontSize, in: AppSettings.fontSizeRange, step: 1)
-                            .frame(width: 160)
-                        Text("A").font(.system(size: 18))
-                        Text("\(Int(settings.fontSize)) pt")
-                            .monospacedDigit()
-                            .foregroundStyle(.secondary)
-                            .frame(width: 40, alignment: .trailing)
+                    HStack(spacing: 6) {
+                        TextField("Size", value: $settings.fontSize,
+                                  format: .number.precision(.fractionLength(0)))
+                            .multilineTextAlignment(.trailing)
+                            .frame(width: 48)
+                        Stepper("", value: $settings.fontSize, in: AppSettings.fontSizeRange, step: 1)
+                            .labelsHidden()
+                        Text("pt (10-24)").foregroundStyle(.secondary)
                     }
                 }
                 Picker("Add new TODOs at the", selection: $settings.newItemsAtTop) {

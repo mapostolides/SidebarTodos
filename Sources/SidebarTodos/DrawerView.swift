@@ -39,10 +39,18 @@ struct DrawerView: View {
                     }
                 }
                 Divider()
-                Section("Text size") {
-                    Button("Larger Text") { settings.biggerText() }
-                    Button("Smaller Text") { settings.smallerText() }
-                    Button("Default Size") { settings.resetText() }
+                Menu("Text Size: \(Int(settings.fontSize)) pt") {
+                    ForEach(Int(AppSettings.fontSizeRange.lowerBound)...Int(AppSettings.fontSizeRange.upperBound), id: \.self) { size in
+                        Button {
+                            settings.fontSize = Double(size)
+                        } label: {
+                            if Int(settings.fontSize) == size {
+                                Label("\(size) pt", systemImage: "checkmark")
+                            } else {
+                                Text("\(size) pt")
+                            }
+                        }
+                    }
                 }
                 Divider()
                 Button("Manage Lists...", action: openApp)
