@@ -61,8 +61,8 @@ final class EdgeController {
     static let drawerWidth: CGFloat = 340
     static let drawerMargin: CGFloat = 8
     static let hoverDelay: TimeInterval = 0.06
-    /// How close (in points) the cursor must come to the tab to open the drawer (~2 cursor lengths).
-    static let proximity: CGFloat = 48
+    /// Extra margin (points) around the tab that also opens the drawer; 0 = only touching the tab itself.
+    static let proximity: CGFloat = 0
     static let closeDelay: TimeInterval = 0.4
 
     private let store: Store

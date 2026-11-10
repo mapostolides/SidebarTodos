@@ -3,7 +3,7 @@
 A running TODO list that lives on the left edge of your Mac screen.
 
 - A slim tab sits on the left edge (with a count of open TODOs). Move the mouse
-  near it (within ~2 cursor lengths) and the active list slides open; move away
+  onto it and the active list slides open; move away
   and it hides.
 - Multiple lists; one "active" list is shown in the edge drawer. Switch it from
   the drawer header or the main window.
